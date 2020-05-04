@@ -9,7 +9,7 @@ GO
 
 CREATE TABLE DatiRegioni
 (
-    data TIMESTAMP,
+    data DATETIME,
     stato VARCHAR(255),
     codice_regione VARCHAR(255),
     denominazione_regione VARCHAR(255),
