@@ -12,7 +12,6 @@ $ docker-compose up -d
 
 To completely remove the database
 
-
 ```console
 $ docker-compose down -v
 ```
