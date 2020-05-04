@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+    container_name: sqlserver
+    command: sh -c ' chmod +x /scripts/entrypoint.sh; /scripts/entrypoint.sh & /opt/mssql/bin/sqlservr;'
+    ports: 
+      - 1433:1433
+    environment: 
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ${SA_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    volumes: 
+      - dbdata:/var/opt/mssql
+      - ./initdb:/initdb
+      - ../dataset/dati-regioni.csv:/dati-regioni.csv
+      - ./scripts:/scripts
+volumes: 
+  dbdata:
+  
