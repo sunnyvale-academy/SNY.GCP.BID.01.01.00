@@ -32,7 +32,4 @@ CREATE TABLE DatiRegioni
 )
 GO
 
-BULK INSERT dbo.DatiRegioni
-FROM '/dati-regioni.csv'
-WITH ( FORMAT='CSV', ROWTERMINATOR='\n', FIELDTERMINATOR=',');
 

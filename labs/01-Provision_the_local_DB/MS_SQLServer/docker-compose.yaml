@@ -13,7 +13,7 @@ services:
     volumes: 
       - dbdata:/var/opt/mssql
       - ./initdb:/initdb
-      - ../dataset/dati-regioni.csv:/dati-regioni.csv
+      - ./dataset/dati-regioni.csv:/dataset/dati-regioni.csv
       - ./scripts:/scripts
 volumes: 
   dbdata:
