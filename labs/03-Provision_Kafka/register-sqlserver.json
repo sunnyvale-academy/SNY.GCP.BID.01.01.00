@@ -9,7 +9,9 @@
         "database.user": "sa",
         "database.password": "MySuperStrongPASS%",
         "database.dbname": "Covid19DB",
-        "database.history.kafka.bootstrap.servers": "localhost:9092",
-        "database.history.kafka.topic": "schema-changes.DatiRegioni"
+        "database.history.kafka.bootstrap.servers": "broker:9092",
+        "database.history.kafka.topic": "schema-changes.DatiRegioni",
+        "bootstrap.servers": "broker:9092",
+        "confluent.topic.bootstrap.servers":"broker:9092"
     }
 }

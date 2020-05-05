@@ -2,6 +2,8 @@ version: "3.3"
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+    build:
+      context: .
     container_name: sqlserver
     hostname: sqlserver
     command: sh -c ' chmod +x /scripts/entrypoint.sh; /scripts/entrypoint.sh & /opt/mssql/bin/sqlservr;'
