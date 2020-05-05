@@ -104,6 +104,19 @@ services:
     networks: 
       - kafka_network
 
+  after-init:
+    #image: busybox:latest
+    build:
+      context: ./AfterInit
+    command: sh -c 'chmod 777 /register-sqlserver.sh & /register-sqlserver.sh'
+    depends_on: 
+      - connect
+    volumes: 
+      - ./AfterInit/register-sqlserver.sh:/register-sqlserver.sh
+      - ./AfterInit/register-sqlserver.json:/register-sqlserver.json
+    networks: 
+      - kafka_network
+
 networks: 
   kafka_network:
   ms_sqlserver_db_network:
