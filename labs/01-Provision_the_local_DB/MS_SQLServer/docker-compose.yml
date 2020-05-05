@@ -3,6 +3,7 @@ services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
     container_name: sqlserver
+    hostname: sqlserver
     command: sh -c ' chmod +x /scripts/entrypoint.sh; /scripts/entrypoint.sh & /opt/mssql/bin/sqlservr;'
     ports: 
       - 1433:1433
@@ -15,6 +16,11 @@ services:
       - ./initdb:/initdb
       - ./dataset/dati-regioni.csv:/dati-regioni.csv
       - ./scripts:/scripts
-volumes: 
+    networks: 
+      - db_network
+volumes:  
   dbdata:
-  
+networks: 
+  db_network:
+    
+    
