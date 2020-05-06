@@ -112,8 +112,9 @@ services:
     depends_on: 
       - connect
     volumes: 
-      - ./AfterInit/register-sqlserver.sh:/register-sqlserver.sh
+      - ./AfterInit/after-init.sh:/after-init.sh
       - ./AfterInit/register-sqlserver.json:/register-sqlserver.json
+      - ./AfterInit/register-bigquery.json:/register-bigquery.json
     networks: 
       - kafka_network
 
