@@ -1,19 +1,17 @@
 {
-    "name": "kcbq-connect1",
-    "config": {
-      "connector.class": "com.wepay.kafka.connect.bigquery.BigQuerySinkConnector",
-      "tasks.max" : "1",
-      "topics" : "kcbq-quickstart1",
-      "sanitizeTopics" : "true",
-      "autoCreateTables" : "true",
-      "autoUpdateSchemas" : "true",
-      "schemaRetriever" : "com.wepay.kafka.connect.bigquery.schemaregistry.schemaretriever.SchemaRegistrySchemaRetriever",
-      "schemaRegistryLocation":"http://localhost:8081",
-      "bufferSize": "100000",
-      "maxWriteSize":"10000",
-      "tableWriteWait": "1000",
-      "project" : "confluent-243016",
-      "datasets" : ".*=ConfluentDataSet",
-      "keyfile" : " /Users/titomccutcheon/dev/confluent_fork/kafka-connect-bigquery/kcbq-connector/quickstart/properties/confluent-243016-384a24e2de1a.json"
-    }
+  "name": "DatiRegioni-connector",
+  "config": {
+      "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+      "tasks.max": "1",
+      "database.server.name": "sqlserver",
+      "database.hostname": "sqlserver",
+      "database.port": "1433",
+      "database.user": "sa",
+      "database.password": "MySuperStrongPASS%",
+      "database.dbname": "Covid19DB",
+      "database.history.kafka.bootstrap.servers": "broker:9092",
+      "database.history.kafka.topic": "schema-changes.DatiRegioni",
+      "bootstrap.servers": "broker:9092",
+      "confluent.topic.bootstrap.servers":"broker:9092"
   }
+}
