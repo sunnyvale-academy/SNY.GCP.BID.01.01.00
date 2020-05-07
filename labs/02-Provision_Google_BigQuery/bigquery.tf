@@ -25,5 +25,6 @@ module "bigquery" {
   dataset_labels = {
     env      = "dev"
     billable = "true"
+    corso = "true"
   }
 }

@@ -108,7 +108,7 @@ services:
     #image: busybox:latest
     build:
       context: ./AfterInit
-    command: sh -c 'chmod 777 /register-sqlserver.sh & /register-sqlserver.sh'
+    command: sh -c 'chmod 777 /after-init.sh & /after-init.sh'
     depends_on: 
       - connect
     volumes: 
